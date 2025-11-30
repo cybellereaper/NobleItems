@@ -6,6 +6,7 @@ import com.github.cybellereaper.item.CustomItemRegistry;
 import com.github.cybellereaper.item.ItemFactory;
 import com.github.cybellereaper.mob.CustomMobRegistry;
 import com.github.cybellereaper.mob.MobSpawner;
+import com.github.cybellereaper.resourcepack.ResourcePackBuilder;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,12 +19,14 @@ public final class NobleItems extends JavaPlugin {
     private DefinitionLoader definitionLoader;
     private ItemFactory itemFactory;
     private MobSpawner mobSpawner;
+    private ResourcePackBuilder resourcePackBuilder;
 
     @Override
     public void onEnable() {
         this.definitionLoader = new DefinitionLoader(getLogger());
         this.itemFactory = new ItemFactory(this);
         this.mobSpawner = new MobSpawner(mobRegistry, itemRegistry, itemFactory);
+        this.resourcePackBuilder = new ResourcePackBuilder(getDataFolder().toPath(), getLogger(), itemRegistry, mobRegistry);
 
         saveResourceIfMissing("items.yml");
         saveResourceIfMissing("mobs.yml");
@@ -55,7 +58,7 @@ public final class NobleItems extends JavaPlugin {
             getLogger().severe("Failed to register /nobleitems command; check plugin.yml");
             return;
         }
-        NobleItemsCommand executor = new NobleItemsCommand(this, itemRegistry, mobRegistry, itemFactory, mobSpawner);
+        NobleItemsCommand executor = new NobleItemsCommand(this, itemRegistry, mobRegistry, itemFactory, mobSpawner, resourcePackBuilder);
         command.setExecutor(executor);
         command.setTabCompleter(executor);
     }
