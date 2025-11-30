@@ -1,0 +1,23 @@
+mobs:
+  ruby_golem:
+    display-name: "&cRuby Golem"
+    type: IRON_GOLEM
+    max-health: 200
+    attack-damage: 15
+    blockbench:
+      model: models/entity/ruby_golem.geo.json
+      texture: textures/entity/ruby_golem.png
+      scale: 1.1
+    equipment:
+      hand: ruby_sword
+  sky_healer:
+    display-name: "&dSky Healer"
+    type: ALLAY
+    max-health: 40
+    attack-damage: 4
+    blockbench:
+      model: models/entity/sky_healer.geo.json
+      texture: textures/entity/sky_healer.png
+      scale: 0.9
+    equipment:
+      off_hand: healer_staff

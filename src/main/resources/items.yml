@@ -1,0 +1,31 @@
+items:
+  ruby_sword:
+    display-name: "&cRuby Sword"
+    material: DIAMOND_SWORD
+    custom-model-data: 1001
+    lore:
+      - "&7Forged with Blockbench geometry"
+      - "&c+12 Damage"
+    blockbench:
+      model: models/item/ruby_sword.geo.json
+      texture: textures/item/ruby_sword.png
+      scale: 1.0
+    stats:
+      damage: 12
+      defense: 0
+      critical-chance: 0.15
+  healer_staff:
+    display-name: "&dHealer's Staff"
+    material: BLAZE_ROD
+    custom-model-data: 1002
+    lore:
+      - "&7Linked to your Blockbench animations"
+      - "&a+6 Damage &7| &a+10 Defense"
+    blockbench:
+      model: models/item/healer_staff.geo.json
+      texture: textures/item/healer_staff.png
+      scale: 1.0
+    stats:
+      damage: 6
+      defense: 10
+      critical-chance: 0.05

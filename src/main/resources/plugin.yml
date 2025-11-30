@@ -1,4 +1,13 @@
 name: NobleItems
-version: '1.0-SNAPSHOT'
+version: '${version}'
 main: com.github.cybellereaper.NobleItems
 api-version: '1.21'
+commands:
+  nobleitems:
+    description: NobleItems admin command
+    usage: /<command> reload|give|spawn|buildpack [filename]
+    permission: nobleitems.admin
+permissions:
+  nobleitems.admin:
+    description: Access to NobleItems management commands
+    default: op
